@@ -1,0 +1,136 @@
+.NewKwizForm {
+  background-color: var(--bg-color-editor);
+  display: flex;
+  flex-direction: column;
+}
+label {
+  display: none;
+}
+input[type="text"] {
+  border: none;
+  font-family: "Poppins Medium";
+  font-size: 1.5rem;
+  text-align: center;
+}
+input::placeholder {
+  color: var(--color-placeholder)
+}
+#imageInput {
+  background-color: var(--bg-color-input);
+  height: 152px;
+  margin: 1rem 1rem 0;
+}
+#kwizQuestion {
+  border: 2px solid var(--color-darkest);
+  margin: 1rem 1rem 0;
+  height: 112px;
+  font-size: 2.25rem;
+}
+.questionsForm {
+  display: flex;
+}
+.questionsForm fieldset{
+  width: 50%;
+}
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 1rem 0;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 264px;
+}
+.answer {
+  background-color: #fff;
+  border: 2px solid var(--color-darkest);
+  font-family: "Poppins Medium";
+  height: 126px;
+  width: calc(50% - .5rem);
+  display: flex;
+}
+.answer input[type="radio"] {
+  width: 4rem;
+  align-self: center;
+}
+.answer input[type="text"] {
+  align-self: stretch;
+  border-right: 2px solid black;
+  flex-grow: 1;
+  width: 4rem;
+} 
+.answer_letter {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  width: 88px;
+}
+.bg_answer_A {
+  background-color: var(--color-answer-A);
+}
+.bg_answer_B {
+  background-color: var(--color-answer-B);
+}
+.bg_answer_C {
+  background-color: var(--color-answer-C);
+}
+.bg_answer_D {
+  background-color: var(--color-answer-D);
+}
+.questions_list {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.questions_list button {
+  background-color: #fff;
+  font-size: 1.5rem;
+  width: 120px;
+  height: 88px;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: all .5s;
+  position: relative;
+}
+.questions_list button.reduce {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.questions_list button::before {
+  position: absolute;
+  right: 0;
+  height: 88px;
+  display:block;
+  width: 0;
+  content: '';
+  transition: all .5s;
+}
+.questions_list button.expand::before {
+  width: 136px;
+  right: 120px;
+}
+.questions_list button.expand {
+  margin-left: 120px;
+}
+.questions_list button.selected {
+  background-color: var(--color-kwiz);
+
+}
+.questions_list button:last-child {
+  font-size: 3rem;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  width: 120px;
+  height: 88px;
+  margin-right: 0;
+}
+

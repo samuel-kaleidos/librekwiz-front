@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Router } from "@reach/router"
+import { Home } from "./pages/Home/Home"
+import { Admin } from "./pages/Admin/Admin"
+import { Game } from "./pages/Game/Game"
+import { PinCode } from "./pages/PinCode/PinCode"
+import { EditGame } from "./pages/EditGame/EditGame"
+import { CreateNewKwiz } from "./pages/CreateNewKwiz/CreateNewKwiz"
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Router>
+          <Home path='/' />
+          <Admin path='/admin' />
+          <EditGame path='/admin/:id' />
+          <Game path='/game/:pincode/:name' />
+          <PinCode path='/game/:admin' />
+          <CreateNewKwiz path='/create'/>
+        </Router>
+      </div>
   );
 }
 
